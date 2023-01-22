@@ -18,7 +18,7 @@ I am doing this as a hobby, so don't have too high excpectations.
 * *I have not tested with xfce image, but I think it should work too*
 
 ## Installation and usage
-### Running ansible from the SBC locally
+### Option 1: Running ansible from the SBC locally
 ```
 #Login to your SBC over SSH or use it's keyboard and screen directly on the device
 ssh <your regular user>@<Your Orange Pi 5 IP address>
@@ -47,7 +47,7 @@ ansible-playbook site.yml
 #Optional, reboot the SBC
 ```
 
-### Running ansible from another host to configure the SBC
+### Option 2: Running ansible from another host to configure the SBC
 ```
 #Install needed tools to use ansible and git
 sudo apt install -y git ansible

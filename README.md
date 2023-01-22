@@ -71,7 +71,7 @@ vim inventory.yml
 ansible-playbook site.yml
 
 #Optional, reboot the SBC
-ssh <your regular user>@<Your Orange Pi 5 IP address> reboot 
+ssh <your regular user>@<Your Orange Pi 5 IP address> sudo reboot 
 ```
 
 * If the roles purpose is unclear, then check what they do from the source code

@@ -66,8 +66,8 @@ vim site.yml
 #Edit inventory.yml to fit your setup. Read **About roles and variables** below for more info.
 vim inventory.yml
 
-#Run ansible
-ansible-playbook site.yml
+#Run ansible, if you have public key authentication in SSH then you can skip the --ask-pass flag.
+ansible-playbook --ask-pass site.yml
 
 #Optional, reboot the SBC
 ```

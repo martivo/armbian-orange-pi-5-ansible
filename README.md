@@ -88,7 +88,7 @@ ansible-playbook --ask-pass site.yml
 | gdm-auto-login | Passwordless login for normal_user in GDM3 | normal_user | ubuntu-desktop-minimal | 
 | gdm-enable-wayland | Enable wayland in GDM3 | | ubuntu-desktop-minimal, orangepi5-hdmi |
 | [input-remapper](https://github.com/sezanzeb/input-remapper) | Software that enables to remap keys and mouse buttons | | |
-| kodi | Installs kodi. [More...](https://forum.armbian.com/topic/25957-guide-kodi-on-orange-pi-5-with-gpu-hardware-acceleration-and-hdmi-audio/) |  | ubuntu-desktop-minimal orangepi5-hdmi gdm-enable-wayland |
+| kodi | Installs kodi. [More...](https://forum.armbian.com/topic/25957-guide-kodi-on-orange-pi-5-with-gpu-hardware-acceleration-and-hdmi-audio/) |  |  gdm-enable-wayland |
 | lgtv | Installs [LGWebOSRemote](https://github.com/klattimer/LGWebOSRemote) with configuration and some example scripts | lgtv_configuration, normal_user | |
 | net-disable-ipv6 | Disable IPv6 | | |
 | set-hostname | Set hostname for your Orange Pi 5  | hostname | |

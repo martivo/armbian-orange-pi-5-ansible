@@ -1,5 +1,5 @@
 
-- name: set timezone to Europe/Tallinn
+- name: set timezone 
   timezone:
     name: '{{ timezone }}'
 

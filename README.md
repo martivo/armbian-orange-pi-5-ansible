@@ -67,6 +67,9 @@ vim site.yml
 #Edit inventory.yml to fit your setup. Read **About roles and variables** below for more info.
 vim inventory.yml
 
+#Run ansible
+ansible-playbook site.yml
+
 #Optional, reboot the SBC
 ssh <your regular user>@<Your Orange Pi 5 IP address> reboot 
 ```

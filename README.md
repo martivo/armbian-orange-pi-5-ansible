@@ -49,19 +49,19 @@ reboot #Optional
 | extra-software | Additional pacakges that I like (transmission-gtk, vim, prometheus-node-exporter, armbian-config) | | |
 | firefox-no-snap | Install firefox without using snap. | | |
 | gdm-auto-login | Passwordless login for normal_user in GDM3 | normal_user | ubuntu-desktop-minimal | 
-| gdm-enable-wayland | Enable wayland in GDM3 | | ubuntu-desktop-minimal|
+| gdm-enable-wayland | Enable wayland in GDM3 | | ubuntu-desktop-minimal, orangepi5-hdmi |
 | [input-remapper](https://github.com/sezanzeb/input-remapper) | Software that enables to remap keys and mouse buttons | | |
-| lgtv | Installs [LGWebOSRemote](https://github.com/klattimer/LGWebOSRemote) with configuration and some example scripts | lgtv_configuration normal_user | |
+| lgtv | Installs [LGWebOSRemote](https://github.com/klattimer/LGWebOSRemote) with configuration and some example scripts | lgtv_configuration, normal_user | |
 | net-disable-ipv6 | Disable IPv6 | | |
-| set-hostname | Set hostname for your Orange Pi 5  | | |
+| set-hostname | Set hostname for your Orange Pi 5  | hostname | |
 | set-timezone | Set timezone for the host | timezone | |
 | no-boot-logo | Disable bootloader logo to see verbose messages (minimal image has it already disabled) | | |
 | no-swap | Disable swap  | | |
 | orangepi5-hdmi | Install mesa drivers and configure hdmi sound. [More...](https://forum.armbian.com/topic/25957-guide-kodi-on-orange-pi-5-with-gpu-hardware-acceleration-and-hdmi-audio/) | | |
-| sshfs | Mount SSHFS folder from another server. Creates a ssh keypair under /root/.ssh/sshfs that is used for the sshfs | ssh_fs_mount_connection ssh_fs_mount_directory | |
+| sshfs | Mount SSHFS folder from another server. Creates a ssh keypair under /root/.ssh/sshfs that is used for the sshfs | ssh_fs_mount_connection,  ssh_fs_mount_directory | |
 | surround-sound-test | Downloads a surround sound testing video to /home/{{ normal_user }}/ChID-BLITS-EBU.mp4 | normal_user | |
 | ubuntu-desktop-minimal | Install ubuntu desktop minimal with a few addiditonal tools | | |
-| user-ssh-authorized-key | Add a public ssh key to /home/{{ normal_user }}/.ssh/authorized_keys for passwordless login | normal_user user_ssh_authorized_key | |
+| user-ssh-authorized-key | Add a public ssh key to /home/{{ normal_user }}/.ssh/authorized_keys for passwordless login | normal_user,  user_ssh_authorized_key | |
 
 
 

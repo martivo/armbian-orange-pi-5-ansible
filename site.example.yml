@@ -13,6 +13,7 @@
     - role: ubuntu-desktop-minimal
     - role: gdm-auto-login
     - role: gdm-enable-wayland
+    - role: kodi
     - role: extra-software
     - role: firefox-no-snap
     - role: input-remapper

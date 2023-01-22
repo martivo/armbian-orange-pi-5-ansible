@@ -1,11 +1,7 @@
 all:
   hosts:
-    #Uncomment next two lines if you run ansible from another machine, replace IP with your Orange Pi IP and username with SSH user
-    #192.168.X.X:
-    #  ansible_user: orange
-    #Uncomment next two lines if you run ansible from the Orange PI locally
-    #127.0.0.1:
-    #  ansible_connection: local
+    192.168.X.X: #Replace with your Orange PI IP address
+      ansible_user: orange #Replace with oyur Orange PI 5 username for SSH
     vars:
       normal_user: <non root user of your SBC that you created during armbian first boot, ex: martin>
       timezone: <timezone to set, ex: Europe/Tallinn>

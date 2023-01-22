@@ -1,0 +1,15 @@
+all:
+  hosts:
+    127.0.0.1:
+      ansible_connection: local
+    vars:
+      normal_user: <non root user of your SBC that you created during armbian first boot, ex: martin>
+      timezone: <timezone to set, ex: Europe/Tallinn>
+      hostname: <hostname to set for your SBC, ex: myorangepi5>
+      user_ssh_authorized_key: <your public SSH key: ssh-rsa AAA...>  #Used by user-ssh-authorized-key role
+      ssh_fs_mount_directory: <SSHFS directory to mount, ex: /mnt/shared> #Use by sshfs role
+      ssh_fs_mount_connection: <SSHFS connection, ex: user@host:/your/directory/shared> #Used by sshfs role
+      lgtv_configuration: <if you want to control your lgtv remotely, ex: '{"MyTV": {"key": "xxxxxxxxxxxxxxxxxx", "mac": "xx:xx:xx:xx:xx:xx", "ip": "192.168.N.N", "hostname": "192.168.N.N"}}'
+
+    
+    

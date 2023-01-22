@@ -24,7 +24,7 @@ I am doing this as a hobby, so don't have too high excpectations.
 ssh <your regular user>@<Your Orange Pi 5 IP address>
 
 #Install needed tools to use ansible and git
-apt install -y git ansible 
+sudo apt install -y git ansible 
 
 #Clone this repo
 git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git
@@ -50,7 +50,7 @@ reboot
 ### Running ansible from another host to configure the SBC
 ```
 #Install needed tools to use ansible and git
-apt install -y git ansible
+sudo apt install -y git ansible
 
 #Clone this repo
 git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git

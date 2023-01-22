@@ -1,0 +1,7 @@
+- name: Download 5.1 sound test video
+  get_url:
+       url: https://www2.iis.fraunhofer.de/AAC/ChID-BLITS-EBU.mp4
+       dest: "/home/{{ normal_user }}/"
+       mode: 0644
+       group: "{{ normal_user }}"
+       owner: "{{ normal_user }}"

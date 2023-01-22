@@ -1,0 +1,20 @@
+
+- name: Disable snap firefox
+  copy:
+    src: mozilla-firefox
+    dest: /etc/apt/preferences.d/mozilla-firefox
+    mode: '0644'
+    owner: 'root'
+    group: 'root'
+    backup: no
+
+- name: Add repo firefox
+  ansible.builtin.apt_repository:
+    repo: ppa:mozillateam/ppa
+
+- name: Install Packages
+  apt:
+    pkg:
+      - firefox
+    state: latest
+    update_cache: true

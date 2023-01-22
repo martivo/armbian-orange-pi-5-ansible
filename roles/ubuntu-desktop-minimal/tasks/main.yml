@@ -1,0 +1,12 @@
+- name: Install Packages
+  apt:
+    pkg:
+      - ubuntu-desktop-minimal
+      - nemo
+      - eog
+      - mpv
+      - libcanberra-pulse
+      - mesa-utils
+      - pavucontrol
+    state: latest
+    update_cache: true

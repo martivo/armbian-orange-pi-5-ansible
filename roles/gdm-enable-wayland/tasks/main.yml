@@ -1,0 +1,7 @@
+    
+- name: Enable wayland in gdm3
+  lineinfile:
+    path: /etc/gdm3/custom.conf
+    regexp: '^#WaylandEnable=false'
+    line: WaylandEnable=true
+

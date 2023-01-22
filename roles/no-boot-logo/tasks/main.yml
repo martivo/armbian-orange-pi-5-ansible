@@ -1,0 +1,5 @@
+- name: Disable bootlogo
+  lineinfile:
+    path: /boot/armbianEnv.txt
+    regexp: '^bootlogo=true'
+    line: bootlogo=false

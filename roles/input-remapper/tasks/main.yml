@@ -1,0 +1,16 @@
+
+- name: Copy input-remapper-1.5.0.deb
+  copy:
+    src: input-remapper-1.5.0.deb
+    dest: /root/input-remapper-1.5.0.deb
+    mode: '0644'
+    owner: 'root'
+    group: 'root'
+    backup: no
+
+
+- name: Install input remapper
+  apt:
+    deb: /root/input-remapper-1.5.0.deb
+    
+

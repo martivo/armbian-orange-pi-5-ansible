@@ -1,0 +1,18 @@
+- name: create normal_user .ssh directory
+  file:
+    path: "/home/{{ normal_user }}/.ssh"
+    state: directory
+    mode: '0700'
+    owner: '{{ normal_user }}'
+    group: '{{ normal_user }}'
+    
+
+- name: Copy authorized keys
+  lineinfile:
+    dest: '/home/{{ normal_user }}/.ssh/authorized_keys'
+    line: '{{ user_ssh_authorized_key }}'
+    create: true
+    mode: '0644'
+    owner: '{{ normal_user }}'
+    group: '{{ normal_user }}'
+

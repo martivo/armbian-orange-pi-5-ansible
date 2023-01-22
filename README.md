@@ -45,7 +45,6 @@ vim inventory.yml
 ansible-playbook site.yml
 
 #Optional, reboot the SBC
-reboot 
 ```
 
 ### Running ansible from another host to configure the SBC
@@ -71,7 +70,6 @@ vim inventory.yml
 ansible-playbook site.yml
 
 #Optional, reboot the SBC
-ssh <your regular user>@<Your Orange Pi 5 IP address> reboot 
 ```
 
 * If the roles purpose is unclear, then check what they do from the source code

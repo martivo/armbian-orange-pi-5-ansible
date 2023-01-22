@@ -1,31 +1,41 @@
 # armbian-orange-pi-5-ansible
-Collection of My ansible roles that I use for orange pi 5 SBC running armbian.
-Since Orange Pi 5 is under heavy development and it is concidered unsupported/bleeding edge, then re-installing the OS to test latest builds became tedious and needed to be automated.
+## About
+This is a collection of ansible roles that I use for [Orange Pi 5 SBC](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html)  running [Armbian Linux](https://www.armbian.com/orangepi-5/).
+Since Orange Pi 5 is under heavy development and it is WIP/bleeding edge, then re-installing the OS to test latest builds became tedious and needed to be automated.
 
-Use at your own risk.
-I am not responsible for any damage resulting in the usage of this repository.
+**Use at your own risk. I am not responsible for any damage resulting in the usage of this repository.**
+
 If you want to help create a fork, PR or issue if you wish.
 I am doing this as a hobby, so don't have too high excpectations.
 
-These roles have only been tested with local execution, not over ssh. 
-Not all of these roles are specific to armbian and orange pi 5.
 
 
-Prequesites:
-Install Orange Pi 5 jammy/legacy/minimal armbian from https://github.com/armbian/build/releases possibly it works also with xfce but is not tested.
-You have copleted the first boot setup of armbian (set your root password, normal user with password, build locale etc...)
 
-Installation:
+## Prequesites
+Install [Orange Pi 5 jammy/legacy/minimal armbian linux from trunk builds](https://github.com/armbian/build/releases)
+Complete the first boot setup of armbian (set your root password, normal user with password, build locale, network connection etc...)
+
+* I have not tested with xfce image, but I think it should work too
+
+## Installation
 ```
 apt install -y git ansible
 git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git
 cd armbian-orange-pi-5-ansible
 cp site.yml.example site.yml
 ```
+
 Edit site.yml variables and enable or disable desired roles. See role information below.
-Running ansible:
+
+* These roles have only been tested with local execution, not over ssh
+* If the roles purpose is unclear, then check what they do
+* Some roles are dependnet on others
+* I have not created hooks, since a "reboot" after the running is expected
+
+## Running
 ```
 ansible-playbook --ask-become-pass site.yml
+reboot
 ```
 
 About roles:
@@ -52,4 +62,3 @@ user-ssh-authorized-key - add a public ssh key to /home/{{ normal_user }}/.ssh/a
 Useful links:
 https://forum.armbian.com/forum/206-orange-pi-5/ 
 https://github.com/armbian/build/releases
-https://www.armbian.com/orangepi-5/

@@ -14,13 +14,13 @@ I am doing this as a hobby, so don't have too high excpectations.
 ## Prequesites
 * Install [Orange Pi 5 jammy/legacy/minimal armbian linux from trunk builds](https://github.com/armbian/build/releases)
 * Complete the first boot setup of armbian (set your root password, normal user with password, build locale, network connection etc...)
-* Have SSH access to Your orange Pi 5 SBC.
+* Have SSH access to Your orange Pi 5 SBC or keyboard and screen connected to it
 * *I have not tested with xfce image, but I think it should work too*
 
 ## Installation and usage
 ### Running ansible from the SBC locally
 ```
-#Login to your SBV over SSH or use it's keyboard and screen directly on the device
+#Login to your SBC over SSH or use it's keyboard and screen directly on the device
 ssh <your regular user>@<Your Orange Pi 5 IP address>
 
 #Install needed tools to use ansible and git
@@ -32,43 +32,49 @@ git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git
 #Create configuration files
 cp site.example.yml site.yml
 cp inventory.example-local.yml inventory.yml
-```
 
-Edit site.yml to your needs. Read **About roles and variables** below for more info.
-Edit inventory.yml to fit your setup. Comments in file.
+#Edit site.yml to your needs. Read **About roles and variables** below for more info.
+vim site.yml
 
-* If the roles purpose is unclear, then check what they do from the source code
-* Some roles are dependnet on others, see **About roles and variables**
-* _I have not created hooks, since a "reboot" after the play is expected_
+#Edit inventory.yml to fit your setup. Read **About roles and variables** below for more info.
+vim inventory.yml
 
-```
+
 #Run ansible
 ansible-playbook site.yml
+
 #Optional, reboot the SBC
 reboot 
 ```
 
 ### Running ansible from another host to configure the SBC
 ```
+#Install needed tools to use ansible and git
 apt install -y git ansible
-git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git
-cp site.example.yml site.yml
-cp inventory.example-remote.yml site.yml
-```
 
-Edit site.yml to your needs. Read **About roles and variables** below for more info.
-Edit inventory.yml to your needs. 
+#Clone this repo
+git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git
+
+#Create configuration files
+cp site.example.yml site.yml
+cp inventory.example-remote.yml inventory.yml
+
+#Edit  to your needs. Read **About roles and variables** below for more info.
+site.yml
+
+#Edit site.yml to your needs. Read **About roles and variables** below for more info.
+vim site.yml
+
+#Edit inventory.yml to fit your setup. Read **About roles and variables** below for more info.
+vim inventory.yml
+
+#Optional, reboot the SBC
+ssh <your regular user>@<Your Orange Pi 5 IP address> reboot 
+```
 
 * If the roles purpose is unclear, then check what they do from the source code
 * Some roles are dependnet on others, see **About roles and variables**
 * _I have not created hooks, since a "reboot" after the play is expected_
-
-```
-#Run ansible
-ansible-playbook site.yml
-#Optional, reboot the SBC
-ssh <your regular user>@<Your Orange Pi 5 IP address> reboot 
-```
 
 
 ## About roles and variables

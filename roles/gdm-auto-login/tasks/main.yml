@@ -2,11 +2,11 @@
 - name: Enable auto login
   lineinfile:
     path: /etc/gdm3/custom.conf
-    regexp: '^# Enabling automatic login'
+    regexp: '^#  AutomaticLoginEnable = true'
     line: AutomaticLoginEnable=True
 
 - name: Enable auto login for normal_user 
   lineinfile:
     path: /etc/gdm3/custom.conf
-    regexp: '^# Enabling timed login'
+    regexp: '^#  AutomaticLogin = user1'
     line: AutomaticLogin={{ normal_user }}

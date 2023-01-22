@@ -50,7 +50,7 @@ ansible-playbook site.yml
 ### Running ansible from another host to configure the SBC
 ```
 #Install needed tools to use ansible and git
-sudo apt install -y git ansible
+sudo apt install -y git ansible vim
 
 #Clone this repo and go to it's directory
 git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git

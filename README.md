@@ -26,8 +26,9 @@ ssh <your regular user>@<Your Orange Pi 5 IP address>
 #Install needed tools to use ansible and git
 sudo apt install -y git ansible 
 
-#Clone this repo
+#Clone this repo and go to it's directory
 git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git
+cd armbian-orange-pi-5-ansible
 
 #Create configuration files
 cp site.example.yml site.yml
@@ -52,8 +53,9 @@ reboot
 #Install needed tools to use ansible and git
 sudo apt install -y git ansible
 
-#Clone this repo
+#Clone this repo and go to it's directory
 git clone https://github.com/martivo/armbian-orange-pi-5-ansible.git
+cd armbian-orange-pi-5-ansible
 
 #Create configuration files
 cp site.example.yml site.yml

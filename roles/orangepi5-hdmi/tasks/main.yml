@@ -35,6 +35,7 @@
   lineinfile:
     path: /usr/share/alsa/cards/aliases.conf
     line: rockchip-hdmi0 cards.HDMI-OUT
+    insertbefore: BOF
 
 
 

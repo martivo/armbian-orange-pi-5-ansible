@@ -61,9 +61,6 @@ cd armbian-orange-pi-5-ansible
 cp site.example.yml site.yml
 cp inventory.example-remote.yml inventory.yml
 
-#Edit  to your needs. Read **About roles and variables** below for more info.
-site.yml
-
 #Edit site.yml to your needs. Read **About roles and variables** below for more info.
 vim site.yml
 

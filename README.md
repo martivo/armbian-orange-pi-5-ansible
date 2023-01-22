@@ -25,20 +25,20 @@ cd armbian-orange-pi-5-ansible
 cp site.yml.example site.yml
 ```
 
-Edit site.yml variables and enable or disable desired roles. See role information below.
+Edit site.yml to your needs. Read **About roles and variables** below for more info.
 
 * These roles have only been tested with local execution, not over ssh
 * If the roles purpose is unclear, then check what they do
-* Some roles are dependnet on others
-* I have not created hooks, since a "reboot" after the running is expected
+* Some roles are dependnet on others, see **About roles and variables**
+* I have not created hooks, since a "reboot" after the play is expected
 
 ## Running
 ```
 ansible-playbook --ask-become-pass site.yml
-reboot
+reboot #Optional
 ```
 
-About roles:
+## About roles and variables
 disable-root-account - removed root password and does not allow root to ssh into the machine. No variables.
 docker - installs Docker CE
 extra-software - Additional pacakges that I like (transmission-gtk, vim, prometheus-node-exporter, armbian-config)

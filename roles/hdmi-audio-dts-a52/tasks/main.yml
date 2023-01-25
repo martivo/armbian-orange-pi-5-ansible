@@ -1,0 +1,56 @@
+#https://help.ubuntu.com/community/DigitalAC-3Pulseaudio
+#https://help.ubuntu.com/community/DTS%20Pulseaudio%20%28dcaenc%29
+#https://github.com/darealshinji/dcaenc
+#https://blogs.gentoo.org/mgorny/2021/07/25/getting-dts-5-1-sound-via-s-pdif-or-hdmi-using-pulseaudio/
+#https://www.youtube.com/watch?v=NhNj2suCevU
+#https://bbs.archlinux.org/viewtopic.php?id=251467&p=4
+
+- name: Install Packages
+  apt:
+    pkg:
+      - libasound2-dev
+      - libtool
+      - automake
+      - autoconf
+      - libavcodec-dev
+      - libavformat-dev
+      - libpulse-dev
+      - git
+    state: latest
+
+- name: Clone alsa-plugins  repo
+  shell: git clone --branch v1.2.6 https://github.com/alsa-project/alsa-plugins.git
+  args: 
+      creates: /root/alsa-plugins
+      chdir: /root
+
+- name: Compile and install a52
+  shell: "./gitcompile --libdir=/usr/lib/aarch64-linux-gnu --sysconfdir=/etc && make install"
+  args: 
+      creates: /usr/lib/aarch64-linux-gnu/alsa-lib/libasound_module_pcm_dca.so
+      chdir: /root/alsa-plugins
+
+
+- name: Clone dcaenc repo
+  shell: git clone https://github.com/darealshinji/dcaenc.git
+  args: 
+      creates: /root/dcaenc
+      chdir: /root
+
+- name: Compile and install dcaenc
+  shell: "autoreconf -f -i -v && ./configure --prefix=/usr --libdir=/usr/lib/aarch64-linux-gnu && make && make install"
+  args: 
+      creates: /usr/lib/aarch64-linux-gnu/alsa-lib/libasound_module_pcm_dca.so
+      chdir: /root/dcaenc
+
+- name: Copy /etc/asound.conf
+  copy:
+    src: asound.conf
+    dest: /etc/asound.conf
+    mode: '0644'
+    backup: no
+      
+- name: Hold libasound2-plugins package
+  ansible.builtin.dpkg_selections:
+    name: libasound2-plugins
+    selection: hold

@@ -1,8 +1,5 @@
-#https://help.ubuntu.com/community/DigitalAC-3Pulseaudio
-#https://help.ubuntu.com/community/DTS%20Pulseaudio%20%28dcaenc%29
 #https://github.com/darealshinji/dcaenc
-#https://blogs.gentoo.org/mgorny/2021/07/25/getting-dts-5-1-sound-via-s-pdif-or-hdmi-using-pulseaudio/
-#https://www.youtube.com/watch?v=NhNj2suCevU
+#https://github.com/alsa-project/alsa-plugins
 #https://bbs.archlinux.org/viewtopic.php?id=251467&p=4
 
 - name: Install Packages

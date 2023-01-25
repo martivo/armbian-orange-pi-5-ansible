@@ -24,4 +24,4 @@
 - name: Add fstab
   lineinfile:
     path: /etc/fstab
-    line: "{{ ssh_fs_mount_connection }} {{ ssh_fs_mount_directory }} fuse.sshfs noauto,x-systemd.automount,_netdev,reconnect,identityfile=/root/.ssh/sshfs,allow_other,default_permissions 0 0"
+    line: "{{ ssh_fs_mount_connection }} {{ ssh_fs_mount_directory }} fuse.sshfs x-systemd.automount,_netdev,reconnect,identityfile=/root/.ssh/sshfs,allow_other,default_permissions 0 0"

@@ -83,7 +83,7 @@ ansible-playbook --ask-pass site.yml
 | --- | --- | --- | --- |
 | disable-root-account | Lock root user and deny root ssh  | | |
 | docker | Install Docker CE | | |
-| extra-software | Additional pacakges that I like (transmission-gtk, vim, prometheus-node-exporter, armbian-config) | | |
+| extra-software | Additional pacakges that I like (transmission-gtk, vim, prometheus-node-exporter, armbian-config) | extra_software | |
 | firefox-no-snap | Install firefox without using snap. | | |
 | gdm-auto-login | Passwordless login for normal_user in GDM3 | normal_user | ubuntu-desktop-minimal | 
 | gdm-enable-wayland | Enable wayland in GDM3 | | ubuntu-desktop-minimal, orangepi5-hdmi |

@@ -1,12 +1,8 @@
 
 
-- name: Install Packages
+- name: Install Extra Packages
   apt:
-    pkg:
-      - transmission-gtk
-      - vim
-      - prometheus-node-exporter
-      - armbian-config
+    pkg: "{{ item }}"
     state: latest
     update_cache: false
-
+  loop: "{{ extra_software }}"

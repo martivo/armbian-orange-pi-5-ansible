@@ -10,3 +10,7 @@ all:
     ssh_fs_mount_directory: <SSHFS directory to mount, ex: /mnt/shared> #Use by sshfs role
     ssh_fs_mount_connection: <SSHFS connection, ex: user@host:/your/directory/shared> #Used by sshfs role
     lgtv_configuration: <if you want to control your lgtv remotely, ex: '{"MyTV": {"key": "xxxxxxxxxxxxxxxxxx", "mac": "xx:xx:xx:xx:xx:xx", "ip": "192.168.N.N", "hostname": "192.168.N.N"}}'
+    extra_software:
+    - vim
+    - armbian-config
+    - dnsutils

@@ -18,10 +18,20 @@
 - name: Install Docker CE
   apt:
     pkg:
+      - bash-completion
       - docker-ce
       - docker-ce-cli
       - containerd.io
       - docker-compose-plugin
     state: latest
     update_cache: true
+
+    
+- name: Download docker bash auto complete
+  get_url:
+       url: https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker
+       dest: "/etc/bash_completion.d/docker"
+       mode: 0644
+       group: "root"
+       owner: "root"
 

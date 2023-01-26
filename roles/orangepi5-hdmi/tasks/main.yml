@@ -6,6 +6,19 @@
   ansible.builtin.apt_repository:
     repo: ppa:liujianfeng1994/rockchip-multimedia
 
+- name: Copy apt priority for panfork-mesa
+  copy:
+    src: panfork-mesa-ppu
+    dest: /etc/apt/preferences.d/panfork-mesa-ppu
+    mode: '0644'
+    backup: no
+
+- name: Copy apt priority for rockchip-multimedia
+  copy:
+    src: rockchip-multimedia-ppu
+    dest: /etc/apt/preferences.d/rockchip-multimedia-ppu
+    mode: '0644'
+    backup: no
 
 - name: Upgrade the OS 
   ansible.builtin.apt:

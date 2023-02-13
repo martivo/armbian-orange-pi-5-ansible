@@ -20,6 +20,12 @@
     mode: '0644'
     backup: no
 
+- name: Install mali-g610-firmware
+  apt:
+        name: mali-g610-firmware
+        state: present
+  
+    
 - name: Upgrade the OS 
   ansible.builtin.apt:
     upgrade: full

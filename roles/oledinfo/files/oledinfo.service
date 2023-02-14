@@ -1,0 +1,14 @@
+[Unit]
+Description=oledinfo
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/
+ExecStart=/root/oledinfo.py
+Restart=always
+RestartSec=5
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target 

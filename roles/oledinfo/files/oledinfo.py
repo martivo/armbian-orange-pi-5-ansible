@@ -41,7 +41,7 @@ info=[
   {"text": """MEM XXX%""", "cmd": """free | grep Mem | awk '{printf("%.0f\\n", 100 - $7/$2 * 100.0);}'"""},
   {"text": """RAID XXX""", "cmd": """cat /proc/mdstat | grep super | awk '{print $6}'"""},
   {"text": """DKR XXX""", "cmd": """echo \"$(docker ps -q | wc -l)/$(docker ps -a -q | wc -l)\""""},
-  {"text": """XXX""", "cmd": """uptime -p | sed 's/ day, /d,/g' | sed 's/ hours, /h,/g' | sed 's/ minutes/m/g'"""}
+  {"text": """XXX""", "cmd": """uptime -p | sed 's/ day, /d,/g' | sed 's/ days, /d,/g' | sed 's/ hours, /h,/g' | sed 's/ minutes/m/g'"""}
 ]
 
 while loop:

@@ -13,6 +13,7 @@
       - libavformat-dev
       - libpulse-dev
       - git
+      - make
     state: latest
 
 - name: Clone alsa-plugins  repo

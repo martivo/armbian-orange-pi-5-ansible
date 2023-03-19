@@ -1,0 +1,7 @@
+- name: Start oledinfo service
+  systemd:
+    name: oledinfo
+    state: restarted
+    enabled: true
+    daemon_reload: true
+ 

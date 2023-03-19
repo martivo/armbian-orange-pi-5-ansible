@@ -22,6 +22,7 @@
     dest: /root/oledinfo.py
     mode: '0754'
     backup: no
+  notify: Start oledinfo service
     
 - name: Copy /etc/systemd/system/oledinfo.service
   copy:
@@ -29,10 +30,4 @@
     dest: /etc/systemd/system/oledinfo.service
     mode: '0644'
     backup: no
-
-- name: Start oledinfo service
-  systemd:
-    name: oledinfo
-    state: restarted
-    enabled: true
-    daemon_reload: true
+  notify: Start oledinfo service

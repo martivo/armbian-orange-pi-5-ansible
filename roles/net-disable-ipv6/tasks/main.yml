@@ -9,3 +9,30 @@
     name: net.ipv6.conf.default.disable_ipv6
     value: '1'
     state: present
+
+
+- name: Set net.ipv4.igmp_max_memberships=1024
+  ansible.posix.sysctl:
+    name: net.ipv4.igmp_max_memberships
+    value: '1024'
+    state: present
+
+- name: Set net.ipv4.neigh.default.gc_thresh3
+  ansible.posix.sysctl:
+    name: net.ipv4.neigh.default.gc_thresh3
+    value: '4096'
+    state: present
+
+- name: Set net.ipv4.neigh.default.gc_thresh2
+  ansible.posix.sysctl:
+    name: net.ipv4.neigh.default.gc_thresh2
+    value: '2048'
+    state: present
+
+- name: Set net.ipv4.neigh.default.gc_thresh1
+  ansible.posix.sysctl:
+    name: net.ipv4.neigh.default.gc_thresh1
+    value: '1024'
+    state: present
+
+

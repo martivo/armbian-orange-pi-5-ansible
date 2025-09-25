@@ -14,5 +14,6 @@
     - role: extra-software
     - role: firefox-no-snap
     - role: input-remapper
+    - role: lgtv
     - role: surround-sound-test
     - role: docker

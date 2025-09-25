@@ -1,0 +1,48 @@
+- name: Install LGTV dep packages
+  apt:
+    pkg:
+      - git
+      - python3-pip
+      - python3.12-venv
+    state: latest
+    update_cache: false
+    
+    
+- name: Install lgtv
+  shell: "python3 -m venv /opt/lgtv-venv && bash -c 'source /opt/lgtv-venv/bin/activate && pip3 install git+https://github.com/klattimer/LGWebOSRemote'"
+  args: 
+      creates: /opt/lgtv-venv/bin/activate
+
+
+- name: create directory .lgtv/
+  file:
+    path: "/home/{{ normal_user }}/.lgtv"
+    state: directory
+    mode: '0755'
+    owner: '{{ normal_user }}'
+    group: '{{ normal_user }}'
+   
+- name: Copy .lgtv/config.json
+  lineinfile:
+    dest: '/home/{{ normal_user }}/.lgtv/config.json'
+    line: '{{ lgtv_configuration }}'
+    create: true
+    mode: '0644'
+    owner: '{{ normal_user }}'
+    group: '{{ normal_user }}'
+    backup: no
+
+- name: Copy volup
+  copy:
+    src: volup
+    dest: /usr/bin/volup
+    mode: '0755'
+    backup: no
+
+- name: Copy voldown
+  copy:
+    src: voldown
+    dest: /usr/bin/voldown
+    mode: '0755'
+    backup: no
+

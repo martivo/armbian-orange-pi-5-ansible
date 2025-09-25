@@ -14,6 +14,7 @@
       - libpulse-dev
       - git
       - make
+      - libasound2-data
     state: latest
 
 - name: Clone alsa-plugins  repo
@@ -52,3 +53,20 @@
   ansible.builtin.dpkg_selections:
     name: libasound2-plugins
     selection: hold
+
+- name: Copy HDMI-OUT.conf
+  copy:
+    src: HDMI-OUT.conf
+    dest: /usr/share/alsa/cards/HDMI-OUT.conf
+    mode: '0644'
+    backup: no
+
+- name: Add HDMI to alsa card
+  lineinfile:
+    path: /usr/share/alsa/cards/aliases.conf
+    line: rockchip-hdmi0 cards.HDMI-OUT
+    insertbefore: BOF
+
+
+
+

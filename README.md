@@ -9,13 +9,11 @@ If you want to help create a fork, PR or issue if you wish.
 I am doing this as a hobby, so don't have too high excpectations.
 
 
-
-
 ## Prequesites
 * Install [Orange Pi 5 jammy/legacy/minimal armbian linux from trunk builds](https://github.com/armbian/build/releases)
+* Use the 6.1 kernel and Gnome desktop version. (Tested with Armbian_25.8.1_Orangepi5_noble_vendor_6.1.115_gnome_desktop)
 * Complete the first boot setup of armbian (set your root password, normal user with password, build locale, network connection etc...)
 * Have SSH access to Your orange Pi 5 SBC or keyboard and screen connected to it
-* *I have not tested with xfce image, but I think it should work too*
 
 ## Installation and usage
 ### Option 1: Running ansible from the SBC locally
@@ -86,20 +84,15 @@ ansible-playbook --ask-pass site.yml
 | extra-software | Additional pacakges that I like (transmission-gtk, vim, prometheus-node-exporter, armbian-config) | extra_software | |
 | firefox-no-snap | Install firefox without using snap. | | |
 | gdm-auto-login | Passwordless login for normal_user in GDM3 | normal_user | ubuntu-desktop-minimal | 
-| gdm-enable-wayland | Enable wayland in GDM3 | | ubuntu-desktop-minimal, orangepi5-hdmi |
 | hdmi-audio-dts-a52 | Creates DTS and a52(DolbyDigital) passthrough ALSA devices | | ubuntu-desktop-minimal orangepi5-hdmi |
 | [input-remapper](https://github.com/sezanzeb/input-remapper) | Software that enables to remap keys and mouse buttons | | |
-| kodi | Installs kodi. [More...](https://forum.armbian.com/topic/25957-guide-kodi-on-orange-pi-5-with-gpu-hardware-acceleration-and-hdmi-audio/) |  |  gdm-enable-wayland |
-| lgtv | Installs [LGWebOSRemote](https://github.com/klattimer/LGWebOSRemote) with configuration and some example scripts | lgtv_configuration, normal_user | |
 | net-disable-ipv6 | Disable IPv6 | | |
 | set-hostname | Set hostname for your Orange Pi 5  | hostname | |
 | set-timezone | Set timezone for the host | timezone | |
 | no-boot-logo | Disable bootloader logo to see verbose messages (minimal image has it already disabled) | | |
 | no-swap | Disable swap  | | |
-| orangepi5-hdmi | Install mesa drivers and configure hdmi sound. [More...](https://forum.armbian.com/topic/25957-guide-kodi-on-orange-pi-5-with-gpu-hardware-acceleration-and-hdmi-audio/) | | |
 | sshfs | Mount SSHFS folder from another server. Creates a ssh keypair under /root/.ssh/sshfs that is used for the sshfs | ssh_fs_mount_connection,  ssh_fs_mount_directory | |
 | surround-sound-test | Downloads a surround sound testing video to /home/{{ normal_user }}/ChID-BLITS-EBU.mp4 | normal_user | |
-| ubuntu-desktop-minimal | Install ubuntu desktop minimal with a few addiditonal tools | | |
 | user-ssh-authorized-key | Add a public ssh key to /home/{{ normal_user }}/.ssh/authorized_keys for passwordless login | normal_user,  user_ssh_authorized_key | |
 
 
